@@ -13,5 +13,5 @@ jobs:
       run: |
         curl -X POST "https://colab.research.google.com/tun/m/notebooks/get" \
           -H "Content-Type: application/json" \
-          -d '{"notebookId": "YOUR_NOTEBOOK_ID"}' \
+          -d '{"notebookId": "1Xv6ycQi03NyfoMWKdFFHx7ZDjQ7ExrYe"}' \
           --max-time 10
