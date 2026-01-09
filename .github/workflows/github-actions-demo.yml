@@ -1,0 +1,17 @@
+name: Keep Colab Alive
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Every 5 minutes
+  workflow_dispatch:
+
+jobs:
+  ping-colab:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Ping Colab Notebook
+      run: |
+        curl -X POST "https://colab.research.google.com/tun/m/notebooks/get" \
+          -H "Content-Type: application/json" \
+          -d '{"notebookId": "YOUR_NOTEBOOK_ID"}' \
+          --max-time 10
